@@ -5,7 +5,7 @@
 
 package com.mytiki.common_rest.exception;
 
-import com.mytiki.common_rest.reply.ApiReplyAmoMessage;
+import com.mytiki.common_rest.reply.ApiReplyAOMessage;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class ApiExceptionBuilder {
 
     private String status;
     private Integer code;
-    private List<ApiReplyAmoMessage> messages;
+    private List<ApiReplyAOMessage> messages;
     private Throwable cause;
 
     public ApiExceptionBuilder status(String status){
@@ -34,12 +34,12 @@ public class ApiExceptionBuilder {
         return this;
     }
 
-    public ApiExceptionBuilder messages(List<ApiReplyAmoMessage> messages){
+    public ApiExceptionBuilder messages(List<ApiReplyAOMessage> messages){
         this.messages = messages;
         return this;
     }
 
-    public ApiExceptionBuilder messages(ApiReplyAmoMessage... messages){
+    public ApiExceptionBuilder messages(ApiReplyAOMessage... messages){
         this.messages = Arrays.asList(messages);
         return this;
     }

@@ -9,40 +9,40 @@ import org.springframework.http.HttpStatus;
 
 import java.util.HashMap;
 
-public class ApiReplyAmoMessageBuilder {
+public class ApiReplyAOMessageBuilder {
 
     private Integer code;
     private String status;
     private String message;
     private HashMap<String, String> properties;
 
-    public ApiReplyAmoMessageBuilder code(Integer code){
+    public ApiReplyAOMessageBuilder code(Integer code){
         this.code = code;
         return this;
     }
 
-    public ApiReplyAmoMessageBuilder status(String status){
+    public ApiReplyAOMessageBuilder status(String status){
         this.status = status;
         return this;
     }
 
-    public ApiReplyAmoMessageBuilder code(HttpStatus httpStatus){
+    public ApiReplyAOMessageBuilder code(HttpStatus httpStatus){
         this.code = httpStatus.value();
         this.status = httpStatus.getReasonPhrase();
         return this;
     }
 
-    public ApiReplyAmoMessageBuilder message(String message){
+    public ApiReplyAOMessageBuilder message(String message){
         this.message = message;
         return this;
     }
 
-    public ApiReplyAmoMessageBuilder properties(HashMap<String, String> properties){
+    public ApiReplyAOMessageBuilder properties(HashMap<String, String> properties){
         this.properties = properties;
         return this;
     }
 
-    public ApiReplyAmoMessageBuilder properties(String... kvpairs){
+    public ApiReplyAOMessageBuilder properties(String... kvpairs){
         int mapSize = kvpairs.length / 2;
         HashMap<String, String> propertiesMap = new HashMap<>(mapSize);
         for(int i=0; i<kvpairs.length; i+=2)
@@ -51,12 +51,12 @@ public class ApiReplyAmoMessageBuilder {
         return this;
     }
 
-    public ApiReplyAmoMessage build(){
-        ApiReplyAmoMessage apiReplyAmoMessage = new ApiReplyAmoMessage();
-        apiReplyAmoMessage.setCode(code);
-        apiReplyAmoMessage.setStatus(status);
-        apiReplyAmoMessage.setMessage(message);
-        apiReplyAmoMessage.setProperties(properties);
-        return apiReplyAmoMessage;
+    public ApiReplyAOMessage build(){
+        ApiReplyAOMessage apiReplyAOMessage = new ApiReplyAOMessage();
+        apiReplyAOMessage.setCode(code);
+        apiReplyAOMessage.setStatus(status);
+        apiReplyAOMessage.setMessage(message);
+        apiReplyAOMessage.setProperties(properties);
+        return apiReplyAOMessage;
     }
 }

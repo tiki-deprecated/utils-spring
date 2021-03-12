@@ -7,13 +7,13 @@ package com.mytiki.common_rest.reply;
 
 import java.util.List;
 
-public class ApiReplyAmo<T> {
+public class ApiReplyAO<T> {
 
     private String status;
     private Integer code;
     private T data;
-    private ApiReplyAmoPage page;
-    private List<ApiReplyAmoMessage> messages;
+    private ApiReplyAOPage page;
+    private List<ApiReplyAOMessage> messages;
 
     public String getStatus() {
         return status;
@@ -39,25 +39,25 @@ public class ApiReplyAmo<T> {
         this.data = data;
     }
 
-    public ApiReplyAmoPage getPage() {
+    public ApiReplyAOPage getPage() {
         return page;
     }
 
-    public void setPage(ApiReplyAmoPage page) {
+    public void setPage(ApiReplyAOPage page) {
         this.page = page;
     }
 
-    public List<ApiReplyAmoMessage> getMessages() {
+    public List<ApiReplyAOMessage> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<ApiReplyAmoMessage> messages) {
+    public void setMessages(List<ApiReplyAOMessage> messages) {
         this.messages = messages;
     }
 
     @Override
     public String toString() {
-        return "ApiReplyAmo{" +
+        return "ApiReplyAO{" +
                 "status='" + status + '\'' +
                 ", code=" + code +
                 ", data=" + data +

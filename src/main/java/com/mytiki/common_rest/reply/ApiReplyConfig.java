@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Import;
 @Import({
         ApiReplyHandler.class
 })
-public class ApiReplySpringConfig {
+public class ApiReplyConfig {
 }

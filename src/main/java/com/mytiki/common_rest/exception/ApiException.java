@@ -5,7 +5,7 @@
 
 package com.mytiki.common_rest.exception;
 
-import com.mytiki.common_rest.reply.ApiReplyAmoMessage;
+import com.mytiki.common_rest.reply.ApiReplyAOMessage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -14,30 +14,30 @@ public class ApiException extends RuntimeException{
 
     private String status;
     private Integer code;
-    private List<ApiReplyAmoMessage> messages;
+    private List<ApiReplyAOMessage> messages;
 
-    public ApiException(String status, Integer code, List<ApiReplyAmoMessage> messages) {
+    public ApiException(String status, Integer code, List<ApiReplyAOMessage> messages) {
         super(messages.toString());
         this.status = status;
         this.code = code;
         this.messages = messages;
     }
 
-    public ApiException(String status, Integer code, ApiReplyAmoMessage... messages) {
+    public ApiException(String status, Integer code, ApiReplyAOMessage... messages) {
         super(Arrays.toString(messages));
         this.status = status;
         this.code = code;
         this.messages = Arrays.asList(messages);
     }
 
-    public ApiException(Throwable cause, String status, Integer code, List<ApiReplyAmoMessage> messages) {
+    public ApiException(Throwable cause, String status, Integer code, List<ApiReplyAOMessage> messages) {
         super(messages.toString(), cause);
         this.status = status;
         this.code = code;
         this.messages = messages;
     }
 
-    public ApiException(Throwable cause, String status, Integer code, ApiReplyAmoMessage... messages) {
+    public ApiException(Throwable cause, String status, Integer code, ApiReplyAOMessage... messages) {
         super(Arrays.toString(messages), cause);
         this.status = status;
         this.code = code;
@@ -60,11 +60,11 @@ public class ApiException extends RuntimeException{
         this.code = code;
     }
 
-    public List<ApiReplyAmoMessage> getMessages() {
+    public List<ApiReplyAOMessage> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<ApiReplyAmoMessage> messages) {
+    public void setMessages(List<ApiReplyAOMessage> messages) {
         this.messages = messages;
     }
 

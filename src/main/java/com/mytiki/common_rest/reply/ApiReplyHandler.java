@@ -20,35 +20,35 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import java.lang.invoke.MethodHandles;
 
 @ControllerAdvice
-public class ApiReplyHandler implements ResponseBodyAdvice<ApiReplyAmo<?>> {
+public class ApiReplyHandler implements ResponseBodyAdvice<ApiReplyAO<?>> {
 
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {
-        return methodParameter.getParameterType().equals(ApiReplyAmo.class);
+        return methodParameter.getParameterType().equals(ApiReplyAO.class);
     }
 
     @Override
-    public ApiReplyAmo<?> beforeBodyWrite(ApiReplyAmo<?> amoReply,
-                                          MethodParameter methodParameter,
-                                          MediaType mediaType,
-                                          Class<? extends HttpMessageConverter<?>> aClass,
-                                          ServerHttpRequest serverHttpRequest,
-                                          ServerHttpResponse serverHttpResponse) {
+    public ApiReplyAO<?> beforeBodyWrite(ApiReplyAO<?> aoReply,
+                                         MethodParameter methodParameter,
+                                         MediaType mediaType,
+                                         Class<? extends HttpMessageConverter<?>> aClass,
+                                         ServerHttpRequest serverHttpRequest,
+                                         ServerHttpResponse serverHttpResponse) {
 
         if(
-            (amoReply.getCode() == null || amoReply.getStatus() == null) &&
+            (aoReply.getCode() == null || aoReply.getStatus() == null) &&
             (serverHttpResponse instanceof ServletServerHttpResponse)
         ) {
             logger.trace("Request: "
                     + serverHttpRequest.getURI().toString()
                     + " - Reply body is missing either code or status. Adding them in");
             HttpStatus httpStatus = HttpStatus.valueOf(((ServletServerHttpResponse) serverHttpResponse).getServletResponse().getStatus());
-            amoReply.setStatus(httpStatus.getReasonPhrase());
-            amoReply.setCode(httpStatus.value());
+            aoReply.setStatus(httpStatus.getReasonPhrase());
+            aoReply.setCode(httpStatus.value());
         }
 
-        return amoReply;
+        return aoReply;
     }
 }

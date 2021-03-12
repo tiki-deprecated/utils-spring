@@ -7,25 +7,25 @@ package com.mytiki.common_rest.reply;
 
 import java.util.HashMap;
 
-public class ApiReplyAmoMessage {
+public class ApiReplyAOMessage {
 
     private Integer code;
     private String status;
     private String message;
     private HashMap<String, String> properties;
 
-    public ApiReplyAmoMessage() {}
+    public ApiReplyAOMessage() {}
 
-    public ApiReplyAmoMessage(String message) {
+    public ApiReplyAOMessage(String message) {
         this.message = message;
     }
 
-    public ApiReplyAmoMessage(String message, HashMap<String, String> properties) {
+    public ApiReplyAOMessage(String message, HashMap<String, String> properties) {
         this.message = message;
         this.properties = properties;
     }
 
-    public ApiReplyAmoMessage(Integer code, String status, String message, HashMap<String, String> properties) {
+    public ApiReplyAOMessage(Integer code, String status, String message, HashMap<String, String> properties) {
         this.code = code;
         this.status = status;
         this.message = message;
@@ -66,7 +66,7 @@ public class ApiReplyAmoMessage {
 
     @Override
     public String toString() {
-        return "ApiReplyAmoMessage{" +
+        return "ApiReplyAOMessage{" +
                 "code=" + code +
                 ", status='" + status + '\'' +
                 ", message='" + message + '\'' +

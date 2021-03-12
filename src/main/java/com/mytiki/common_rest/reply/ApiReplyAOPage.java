@@ -5,16 +5,16 @@
 
 package com.mytiki.common_rest.reply;
 
-public class ApiReplyAmoPage {
+public class ApiReplyAOPage {
 
     private Integer size;
     private Long totalElements;
     private Integer totalPages;
     private Integer page;
 
-    public ApiReplyAmoPage() {}
+    public ApiReplyAOPage() {}
 
-    public ApiReplyAmoPage(Integer size, Long totalElements, Integer totalPages, Integer page) {
+    public ApiReplyAOPage(Integer size, Long totalElements, Integer totalPages, Integer page) {
         this.size = size;
         this.totalElements = totalElements;
         this.totalPages = totalPages;
@@ -55,7 +55,7 @@ public class ApiReplyAmoPage {
 
     @Override
     public String toString() {
-        return "ApiReplyAmoPage{" +
+        return "ApiReplyAOPage{" +
                 "size=" + size +
                 ", totalElements=" + totalElements +
                 ", totalPages=" + totalPages +

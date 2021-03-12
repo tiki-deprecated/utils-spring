@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Import;
 @Import({
       ApiExceptionHandler.class
 })
-public class ApiExceptionSpringConfig {
+public class ApiExceptionConfig {
 }
