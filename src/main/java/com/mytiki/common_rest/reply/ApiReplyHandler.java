@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 import java.lang.invoke.MethodHandles;
 
 @ControllerAdvice
-public class ApiReplyHandler implements ResponseBodyAdvice<ApiReplyAO<?>> {
+public abstract class ApiReplyHandler implements ResponseBodyAdvice<ApiReplyAO<?>> {
 
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
