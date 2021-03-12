@@ -3,7 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-package com.mytiki.common_rest.reply;
+package com.mytiki.common.reply;
 
 public class ApiReplyAOPageBuilder {
 

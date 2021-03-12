@@ -11,11 +11,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mytiki</groupId>
-    <artifactId>common-rest</artifactId>
+    <artifactId>common</artifactId>
     <version>0.0.1</version>
     <packaging>jar</packaging>
 
-    <name>common-rest</name>
+    <name>common</name>
     <description>lib for common rest responses</description>
 
     <parent>

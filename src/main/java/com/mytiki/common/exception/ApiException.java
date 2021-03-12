@@ -3,9 +3,9 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-package com.mytiki.common_rest.exception;
+package com.mytiki.common.exception;
 
-import com.mytiki.common_rest.reply.ApiReplyAOMessage;
+import com.mytiki.common.reply.ApiReplyAOMessage;
 
 import java.util.Arrays;
 import java.util.List;
