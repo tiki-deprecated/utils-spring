@@ -1,17 +1,13 @@
 /*
- * Copyright (c) My Tiki, Inc.
+ * Copyright (c) TIKI Inc.
  * MIT license. See LICENSE file in root directory.
  */
 
 package com.mytiki.common_rest.exception;
 
-import com.mytiki.drinks.api.reply.ApiReplyAmo;
-import com.mytiki.drinks.api.reply.ApiReplyAmoBuilder;
-import com.mytiki.drinks.api.reply.ApiReplyAmoMessage;
-import com.mytiki.drinks.auth.store.StoreException;
-import com.mytiki.drinks.features.latest.graph.exceptions.GraphAbstractException;
-import com.mytiki.drinks.features.latest.graph.exceptions.GraphConflictException;
-import com.mytiki.drinks.features.latest.graph.exceptions.GraphRequestException;
+import com.mytiki.common_rest.reply.ApiReplyAmo;
+import com.mytiki.common_rest.reply.ApiReplyAmoBuilder;
+import com.mytiki.common_rest.reply.ApiReplyAmoMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;
@@ -31,7 +27,7 @@ import java.util.HashMap;
 
 @Order
 @ControllerAdvice
-public class ApiExceptionHandler {
+public abstract class ApiExceptionHandler {
 
     private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
@@ -132,64 +128,8 @@ public class ApiExceptionHandler {
         return ResponseEntity.status(reply.getCode()).body(reply);
     }
 
-    @ExceptionHandler(value = {GraphRequestException.class})
-    public ResponseEntity<ApiReplyAmo<?>> handleGraphRequestException(GraphRequestException e, HttpServletRequest request){
-        logger.debug("Request: "
-                + request.getRequestURI()
-                + "caused {}", e);
-
-        ApiReplyAmo<?> reply = new ApiReplyAmoBuilder<>()
-                .httpStatus(HttpStatus.BAD_REQUEST)
-                .messages(new ApiReplyAmoMessage(e.getMessage()))
-                .build();
-
-        return ResponseEntity.status(reply.getCode()).body(reply);
-    }
-
-    @ExceptionHandler(value = {GraphConflictException.class})
-    public ResponseEntity<ApiReplyAmo<?>> handleGraphConflictException(GraphConflictException e, HttpServletRequest request){
-        logger.debug("Request: "
-                + request.getRequestURI()
-                + "caused {}", e);
-
-        ApiReplyAmo<?> reply = new ApiReplyAmoBuilder<>()
-                .httpStatus(HttpStatus.CONFLICT)
-                .messages(new ApiReplyAmoMessage(e.getMessage()))
-                .build();
-
-        return ResponseEntity.status(reply.getCode()).body(reply);
-    }
-
-    @ExceptionHandler(value = {GraphAbstractException.class})
-    public ResponseEntity<ApiReplyAmo<?>> handleGraphAbstractException(GraphAbstractException e, HttpServletRequest request){
-        logger.debug("Request: "
-                + request.getRequestURI()
-                + "caused {}", e);
-
-        ApiReplyAmo<?> reply = new ApiReplyAmoBuilder<>()
-                .httpStatus(HttpStatus.BAD_REQUEST)
-                .messages(new ApiReplyAmoMessage(e.getMessage()))
-                .build();
-
-        return ResponseEntity.status(reply.getCode()).body(reply);
-    }
-
-    @ExceptionHandler(value = {StoreException.class})
-    public ResponseEntity<ApiReplyAmo<?>> handleStoreException(StoreException e, HttpServletRequest request){
-        logger.debug("Request: "
-                + request.getRequestURI()
-                + "caused {}", e);
-
-        ApiReplyAmo<?> reply = new ApiReplyAmoBuilder<>()
-                .httpStatus(HttpStatus.BAD_REQUEST)
-                .messages(new ApiReplyAmoMessage(e.getMessage()))
-                .build();
-
-        return ResponseEntity.status(reply.getCode()).body(reply);
-    }
-
-    @ExceptionHandler(value = {com.mytiki.drinks.api.exception.ApiException.class})
-    public ResponseEntity<ApiReplyAmo<?>> handleApiException(com.mytiki.drinks.api.exception.ApiException e, HttpServletRequest request){
+    @ExceptionHandler(value = {ApiException.class})
+    public ResponseEntity<ApiReplyAmo<?>> handleApiException(ApiException e, HttpServletRequest request){
         logger.debug("Request: "
                 + request.getRequestURI()
                 + "caused {}", e);

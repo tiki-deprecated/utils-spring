@@ -1,11 +1,11 @@
 /*
- * Copyright (c) My Tiki, Inc.
+ * Copyright (c) TIKI Inc.
  * MIT license. See LICENSE file in root directory.
  */
 
 package com.mytiki.common_rest.exception;
 
-import com.mytiki.drinks.api.reply.ApiReplyAmoMessage;
+import com.mytiki.common_rest.reply.ApiReplyAmoMessage;
 import org.springframework.http.HttpStatus;
 
 import java.util.Arrays;

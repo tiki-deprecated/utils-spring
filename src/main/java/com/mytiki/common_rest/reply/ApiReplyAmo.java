@@ -1,5 +1,5 @@
 /*
- * Copyright (c) My Tiki, Inc.
+ * Copyright (c) TIKI Inc.
  * MIT license. See LICENSE file in root directory.
  */
 
@@ -12,18 +12,8 @@ public class ApiReplyAmo<T> {
     private String status;
     private Integer code;
     private T data;
-    private com.mytiki.drinks.api.reply.ApiReplyAmoPage page;
-    private List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> messages;
-
-    public ApiReplyAmo() {}
-
-    public ApiReplyAmo(String status, Integer code, T data, com.mytiki.drinks.api.reply.ApiReplyAmoPage page, List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> messages) {
-        this.status = status;
-        this.code = code;
-        this.data = data;
-        this.page = page;
-        this.messages = messages;
-    }
+    private ApiReplyAmoPage page;
+    private List<ApiReplyAmoMessage> messages;
 
     public String getStatus() {
         return status;
@@ -49,19 +39,19 @@ public class ApiReplyAmo<T> {
         this.data = data;
     }
 
-    public com.mytiki.drinks.api.reply.ApiReplyAmoPage getPage() {
+    public ApiReplyAmoPage getPage() {
         return page;
     }
 
-    public void setPage(com.mytiki.drinks.api.reply.ApiReplyAmoPage page) {
+    public void setPage(ApiReplyAmoPage page) {
         this.page = page;
     }
 
-    public List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> getMessages() {
+    public List<ApiReplyAmoMessage> getMessages() {
         return messages;
     }
 
-    public void setMessages(List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> messages) {
+    public void setMessages(List<ApiReplyAmoMessage> messages) {
         this.messages = messages;
     }
 

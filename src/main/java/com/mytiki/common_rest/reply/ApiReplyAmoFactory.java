@@ -1,5 +1,5 @@
 /*
- * Copyright (c) My Tiki, Inc.
+ * Copyright (c) TIKI Inc.
  * MIT license. See LICENSE file in root directory.
  */
 
@@ -41,7 +41,7 @@ public class ApiReplyAmoFactory {
     }
 
     public static <T> ApiReplyAmo<List<T>> ok(Page<T> data){
-        ApiReplyAmoPage replyAmoPage = new com.mytiki.drinks.api.reply.ApiReplyAmoPageBuilder()
+        ApiReplyAmoPage replyAmoPage = new ApiReplyAmoPageBuilder()
                 .page(data.getNumber())
                 .size(data.getSize())
                 .totalElements(data.getTotalElements())

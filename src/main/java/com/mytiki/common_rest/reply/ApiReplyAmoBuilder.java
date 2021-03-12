@@ -1,5 +1,5 @@
 /*
- * Copyright (c) My Tiki, Inc.
+ * Copyright (c) TIKI Inc.
  * MIT license. See LICENSE file in root directory.
  */
 
@@ -15,8 +15,8 @@ public class ApiReplyAmoBuilder<T> {
     private String status;
     private Integer code;
     private T data;
-    private com.mytiki.drinks.api.reply.ApiReplyAmoPage page;
-    private List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> messages;
+    private ApiReplyAmoPage page;
+    private List<ApiReplyAmoMessage> messages;
 
     public ApiReplyAmoBuilder<T> status(String status){
         this.status = status;
@@ -39,23 +39,23 @@ public class ApiReplyAmoBuilder<T> {
         return this;
     }
 
-    public ApiReplyAmoBuilder<T> page(com.mytiki.drinks.api.reply.ApiReplyAmoPage page){
+    public ApiReplyAmoBuilder<T> page(ApiReplyAmoPage page){
         this.page = page;
         return this;
     }
 
-    public ApiReplyAmoBuilder<T> messages(List<com.mytiki.drinks.api.reply.ApiReplyAmoMessage> messages){
+    public ApiReplyAmoBuilder<T> messages(List<ApiReplyAmoMessage> messages){
         this.messages = messages;
         return this;
     }
 
-    public ApiReplyAmoBuilder<T> messages(com.mytiki.drinks.api.reply.ApiReplyAmoMessage... messages){
+    public ApiReplyAmoBuilder<T> messages(ApiReplyAmoMessage... messages){
         this.messages = Arrays.asList(messages);
         return this;
     }
 
-    public com.mytiki.drinks.api.reply.ApiReplyAmo<T> build(){
-        com.mytiki.drinks.api.reply.ApiReplyAmo<T> apiReplyAmo = new com.mytiki.drinks.api.reply.ApiReplyAmo<>();
+    public ApiReplyAmo<T> build(){
+        ApiReplyAmo<T> apiReplyAmo = new ApiReplyAmo<>();
         apiReplyAmo.setMessages(messages);
         apiReplyAmo.setStatus(status);
         apiReplyAmo.setCode(code);
