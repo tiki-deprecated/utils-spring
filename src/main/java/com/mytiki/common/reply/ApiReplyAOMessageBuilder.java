@@ -26,7 +26,7 @@ public class ApiReplyAOMessageBuilder {
         return this;
     }
 
-    public ApiReplyAOMessageBuilder code(HttpStatus httpStatus){
+    public ApiReplyAOMessageBuilder status(HttpStatus httpStatus){
         this.code = httpStatus.value();
         this.status = httpStatus.getReasonPhrase();
         return this;
