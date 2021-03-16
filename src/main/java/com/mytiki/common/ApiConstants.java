@@ -11,6 +11,6 @@ public interface ApiConstants {
     String LATEST = "latest";
     String API_LATEST_ROUTE = "/" + API + "/" + LATEST + "/";
 
-    String ADMIN = "admin";
-    String ADMIN_ROUTE = "/" + ADMIN + "/";
+    String HEALTH = "health";
+    String HEALTH_ROUTE = "/" + HEALTH;
 }
