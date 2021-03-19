@@ -29,7 +29,7 @@ import java.util.HashMap;
 @ControllerAdvice
 public abstract class ApiExceptionHandler {
 
-    private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    protected static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @ExceptionHandler(value = {Exception.class})
     public ResponseEntity<ApiReplyAO<?>> handleException(Exception e, HttpServletRequest request){

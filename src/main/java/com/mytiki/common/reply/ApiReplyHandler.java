@@ -22,7 +22,7 @@ import java.lang.invoke.MethodHandles;
 @ControllerAdvice
 public abstract class ApiReplyHandler implements ResponseBodyAdvice<ApiReplyAO<?>> {
 
-    private static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+    protected static final Logger logger = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
     @Override
     public boolean supports(MethodParameter methodParameter, Class<? extends HttpMessageConverter<?>> aClass) {

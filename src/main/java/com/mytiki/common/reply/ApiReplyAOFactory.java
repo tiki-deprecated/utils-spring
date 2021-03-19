@@ -54,4 +54,14 @@ public class ApiReplyAOFactory {
                 .data(data.getContent())
                 .build();
     }
+
+    public static ApiReplyAO<?> error(HttpStatus status){
+        return new ApiReplyAOBuilder<>()
+                .httpStatus(status)
+                .messages(
+                        new ApiReplyAOMessageBuilder()
+                                .status(status)
+                                .build()
+                ).build();
+    }
 }
