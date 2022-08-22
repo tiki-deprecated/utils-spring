@@ -3,11 +3,11 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-package com.mytiki.common.exception;
+package com.mytiki.spring_rest_api.exception;
 
-import com.mytiki.common.reply.ApiReplyAO;
-import com.mytiki.common.reply.ApiReplyAOBuilder;
-import com.mytiki.common.reply.ApiReplyAOMessage;
+import com.mytiki.spring_rest_api.reply.ApiReplyAO;
+import com.mytiki.spring_rest_api.reply.ApiReplyAOBuilder;
+import com.mytiki.spring_rest_api.reply.ApiReplyAOMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.annotation.Order;

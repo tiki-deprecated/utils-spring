@@ -3,7 +3,7 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-package com.mytiki.common.exception;
+package com.mytiki.spring_rest_api.exception;
 
 public class ApiExceptionHandlerDefault extends ApiExceptionHandler{
 }
