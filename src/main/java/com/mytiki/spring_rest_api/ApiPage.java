@@ -3,22 +3,26 @@
  * MIT license. See LICENSE file in root directory.
  */
 
-package com.mytiki.spring_rest_api.reply;
+package com.mytiki.spring_rest_api;
 
-public class ApiReplyAOPage {
+import java.util.List;
+import java.util.Objects;
 
+public class ApiPage<T> {
+    private List<T> elements;
     private Integer size;
     private Long totalElements;
     private Integer totalPages;
     private Integer page;
 
-    public ApiReplyAOPage() {}
+    public ApiPage() {}
 
-    public ApiReplyAOPage(Integer size, Long totalElements, Integer totalPages, Integer page) {
-        this.size = size;
-        this.totalElements = totalElements;
-        this.totalPages = totalPages;
-        this.page = page;
+    public List<T> getElements() {
+        return elements;
+    }
+
+    public void setElements(List<T> elements) {
+        this.elements = elements;
     }
 
     public Integer getSize() {
@@ -55,11 +59,25 @@ public class ApiReplyAOPage {
 
     @Override
     public String toString() {
-        return "ApiReplyAOPage{" +
-                "size=" + size +
+        return "ApiPage{" +
+                "elements=" + elements +
+                ", size=" + size +
                 ", totalElements=" + totalElements +
                 ", totalPages=" + totalPages +
                 ", page=" + page +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApiPage<?> apiPage = (ApiPage<?>) o;
+        return Objects.equals(elements, apiPage.elements) && Objects.equals(size, apiPage.size) && Objects.equals(totalElements, apiPage.totalElements) && Objects.equals(totalPages, apiPage.totalPages) && Objects.equals(page, apiPage.page);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(elements, size, totalElements, totalPages, page);
     }
 }
