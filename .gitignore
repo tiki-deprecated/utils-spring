@@ -31,3 +31,6 @@ hs_err_pid*
 
 # Fuckin Macs
 .DS_Store
+
+# Maven Wrapper Jar
+.mvn/wrapper/maven-wrapper.jar
