@@ -12,7 +12,7 @@
 
     <groupId>com.mytiki</groupId>
     <artifactId>spring_rest_api</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Spring Rest API</name>
@@ -26,7 +26,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>19</java.version>
+        <java.version>17</java.version>
     </properties>
 
     <dependencies>
