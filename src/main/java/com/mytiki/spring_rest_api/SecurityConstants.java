@@ -26,6 +26,7 @@ public class SecurityConstants {
         configuration.setAllowedOriginPatterns(Collections.singletonList("*"));
         configuration.setAllowedMethods(
                 Arrays.asList(
+                        HttpMethod.OPTIONS.name(),
                         HttpMethod.GET.name(),
                         HttpMethod.PUT.name(),
                         HttpMethod.POST.name(),
