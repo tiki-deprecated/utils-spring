@@ -1,4 +1,4 @@
-# Spring Rest API
+# Utils Spring
 
 A simple collection of POJOs and classes that would otherwise be commonly duplicated across TIKI's microservices. 
 
