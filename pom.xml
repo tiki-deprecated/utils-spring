@@ -11,11 +11,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.mytiki</groupId>
-    <artifactId>spring_rest_api</artifactId>
+    <artifactId>utils_spring</artifactId>
     <version>1.0.1</version>
     <packaging>jar</packaging>
 
-    <name>Spring Rest API</name>
+    <name>TIKI Utils - Spring</name>
     <description>Library for common API rest responses</description>
 
     <parent>
